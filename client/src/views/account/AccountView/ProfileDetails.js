@@ -13,20 +13,20 @@ import {
   makeStyles
 } from '@material-ui/core';
 
-const states = [
-  {
-    value: 'alabama',
-    label: 'Alabama'
-  },
-  {
-    value: 'new-york',
-    label: 'New York'
-  },
-  {
-    value: 'san-francisco',
-    label: 'San Francisco'
-  }
-];
+// const states = [
+//   {
+//     value: '',
+//     label: ''
+//   },
+//   {
+//     value: '',
+//     label: ''
+//   },
+//   {
+//     value: '',
+//     label: ''
+//   }
+// ];
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -38,7 +38,7 @@ const ProfileDetails = ({ className, ...rest }) => {
     firstName: 'Katarina',
     lastName: 'Smith',
     email: 'demo@devias.io',
-    phone: '',
+    phone: '555-5555',
     state: 'Alabama',
     country: 'USA'
   });
@@ -155,19 +155,19 @@ const ProfileDetails = ({ className, ...rest }) => {
                 name="state"
                 onChange={handleChange}
                 required
-                select
-                SelectProps={{ native: true }}
+                // select
+                // SelectProps={{ native: true }}
                 value={values.state}
                 variant="outlined"
               >
-                {states.map((option) => (
+                {/* {states.map((option) => (
                   <option
                     key={option.value}
                     value={option.value}
                   >
                     {option.label}
-                  </option>
-                ))}
+                  </option> */}
+                ))
               </TextField>
             </Grid>
           </Grid>

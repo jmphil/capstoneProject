@@ -24,6 +24,13 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
+// const history = useHistory();
+
+// const routeChange = () => {
+//   const path = 'newPath';
+//   history.push(path);
+// };
+
 const TopBar = ({
   className,
   onMobileNavOpen,
@@ -53,9 +60,12 @@ const TopBar = ({
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <IconButton color="inherit">
-            <InputIcon />
-          </IconButton>
+          {/* logout button needs action to fire */}
+          <RouterLink to="/login">
+            <IconButton>
+              <InputIcon />
+            </IconButton>
+          </RouterLink>
         </Hidden>
         <Hidden lgUp>
           <IconButton

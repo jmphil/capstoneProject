@@ -26,7 +26,7 @@ const token = (user) => {
 
 
 router.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("server running locally");
 });
 
 /**
