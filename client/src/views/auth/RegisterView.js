@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -14,6 +15,8 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import { signUp } from '../../actions/index'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,8 +28,33 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const RegisterView = () => {
+
   const classes = useStyles();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    
+    e.preventDefault();
+
+    // call action
+    //pass the email address and password to our action
+    //dispatch(sinup(), cb)
+
+    dispatch(signUp({
+      email: email,
+      password: password
+    }, ()=>{
+      console.log('pushing to another page');
+      navigate('/app/dashboard', { replace: true });
+    }))
+
+
+
+  }
+
 
   return (
     <Page
@@ -57,15 +85,19 @@ const RegisterView = () => {
                 policy: Yup.boolean().oneOf([true], 'This field must be checked')
               })
             }
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            onSubmit={(values) => {
+              // dispatch(signUp(email, password), () =>{
+                // console.log()
+              // })
+              // navigate('/app/dashboard', { replace: true });
+              console.log(values)
             }}
           >
             {({
               errors,
               handleBlur,
               handleChange,
-              handleSubmit,
+              // handleSubmit,
               isSubmitting,
               touched,
               values
@@ -111,6 +143,7 @@ const RegisterView = () => {
                   variant="outlined"
                 />
                 <TextField
+                  onChange={(e)=>setEmail(e.target.value)} 
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
@@ -118,9 +151,8 @@ const RegisterView = () => {
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
-                  onChange={handleChange}
                   type="email"
-                  value={values.email}
+                  value={email}
                   variant="outlined"
                 />
                 <TextField
@@ -131,9 +163,9 @@ const RegisterView = () => {
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
-                  onChange={handleChange}
+                  onChange={(e)=>setPassword(e.target.value)}
                   type="password"
-                  value={values.password}
+                  value={password}
                   variant="outlined"
                 />
                 <Box
