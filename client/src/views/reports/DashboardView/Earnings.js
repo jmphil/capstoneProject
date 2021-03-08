@@ -12,6 +12,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import MoneyIcon from '@material-ui/icons/Money';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
     height: '100%'
   },
   avatar: {
-    backgroundColor: colors.red[600],
+    backgroundColor: colors.green[600],
     height: 56,
     width: 56
   },
   differenceIcon: {
-    color: colors.red[900]
+    color: colors.green[900]
   },
   differenceValue: {
-    color: colors.red[900],
+    color: colors.green[900],
     marginRight: theme.spacing(1)
   }
 }));
@@ -52,13 +53,13 @@ const Budget = ({ className, ...rest }) => {
               gutterBottom
               variant="h6"
             >
-              BUDGET
+              Earnings
             </Typography>
             <Typography
               color="textPrimary"
               variant="h3"
             >
-              $24,000
+              $3400
             </Typography>
           </Grid>
           <Grid item>
@@ -72,7 +73,7 @@ const Budget = ({ className, ...rest }) => {
           display="flex"
           alignItems="center"
         >
-          <ArrowDownwardIcon className={classes.differenceIcon} />
+          <ArrowUpwardIcon className={classes.differenceIcon} />
           <Typography
             className={classes.differenceValue}
             variant="body2"

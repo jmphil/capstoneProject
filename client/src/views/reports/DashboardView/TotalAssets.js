@@ -13,9 +13,10 @@ import {
   makeStyles,
   useTheme
 } from '@material-ui/core';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PhoneIcon from '@material-ui/icons/Phone';
-import TabletIcon from '@material-ui/icons/Tablet';
+import AttachMoney from '@material-ui/icons/AttachMoney';
+import ShowChartIcon from '@material-ui/icons/ShowChart';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const TrafficByDevice = ({ className, ...rest }) => {
+const TotalAssets = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -41,7 +42,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['Investments', 'Checking', 'Savings']
   };
 
   const options = {
@@ -66,23 +67,23 @@ const TrafficByDevice = ({ className, ...rest }) => {
     }
   };
 
-  const devices = [
+  const money = [
     {
-      title: 'Desktop',
+      title: 'Invetments',
       value: 63,
-      icon: LaptopMacIcon,
+      icon: ShowChartIcon,
       color: colors.indigo[500]
     },
     {
-      title: 'Tablet',
+      title: 'Checking',
       value: 15,
-      icon: TabletIcon,
+      icon: AccountBalanceIcon,
       color: colors.red[600]
     },
     {
-      title: 'Mobile',
+      title: 'Savings',
       value: 23,
-      icon: PhoneIcon,
+      icon: AttachMoney,
       color: colors.orange[600]
     }
   ];
@@ -92,7 +93,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Total Assets" />
       <Divider />
       <CardContent>
         <Box
@@ -109,7 +110,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
           justifyContent="center"
           mt={2}
         >
-          {devices.map(({
+          {money.map(({
             color,
             icon: Icon,
             title,
@@ -142,8 +143,8 @@ const TrafficByDevice = ({ className, ...rest }) => {
   );
 };
 
-TrafficByDevice.propTypes = {
+TotalAssets.propTypes = {
   className: PropTypes.string
 };
 
-export default TrafficByDevice;
+export default TotalAssets;
