@@ -5,14 +5,14 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import Budget from './Budget';
+import Budget from './Earnings';
 import LatestOrders from './LatestOrders';
 import LatestProducts from './LatestProducts';
 import Sales from './Sales';
 import TasksProgress from './TasksProgress';
 import TotalCustomers from './TotalCustomers';
 import TotalProfit from './TotalProfit';
-import TrafficByDevice from './TrafficByDevice';
+import TotalAssets from './TotalAssets';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -88,7 +88,7 @@ const Dashboard = () => {
             xl={3}
             xs={12}
           >
-            <TrafficByDevice />
+            <TotalAssets />
           </Grid>
           <Grid
             item

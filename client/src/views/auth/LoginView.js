@@ -12,8 +12,6 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import FacebookIcon from 'src/icons/Facebook';
-import GoogleIcon from 'src/icons/Google';
 import Page from 'src/components/Page';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,8 +41,8 @@ const LoginView = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
-              password: 'Password123'
+              email: '',
+              password: ''
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
@@ -65,12 +63,12 @@ const LoginView = () => {
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box mb={3}>
-                  <Typography
+                  {/* <Typography
                     color="textPrimary"
                     variant="h2"
                   >
                     Sign in
-                  </Typography>
+                  </Typography> */}
                   <Typography
                     color="textSecondary"
                     gutterBottom
@@ -79,7 +77,7 @@ const LoginView = () => {
                     Sign in on the internal platform
                   </Typography>
                 </Box>
-                <Grid
+                {/* <Grid
                   container
                   spacing={3}
                 >
@@ -88,11 +86,11 @@ const LoginView = () => {
                     xs={12}
                     md={6}
                   >
-                    <Button
+                   <Button
                       color="primary"
                       fullWidth
                       startIcon={<FacebookIcon />}
-                      onClick={handleSubmit}
+                      onClick={handleSubmit} 
                       size="large"
                       variant="contained"
                     >
@@ -114,8 +112,8 @@ const LoginView = () => {
                       Login with Google
                     </Button>
                   </Grid>
-                </Grid>
-                <Box
+                </Grid> */}
+                {/* <Box
                   mt={3}
                   mb={1}
                 >
@@ -126,7 +124,7 @@ const LoginView = () => {
                   >
                     or login with email address
                   </Typography>
-                </Box>
+                </Box> */}
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
