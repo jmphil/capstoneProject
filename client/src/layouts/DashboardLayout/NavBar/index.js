@@ -13,7 +13,6 @@ import {
   makeStyles
 } from '@material-ui/core';
 import {
-  BarChart as BarChartIcon,
   Lock as LockIcon,
   ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
@@ -21,27 +20,30 @@ import {
   Users as UsersIcon,
 } from 'react-feather';
 import NavItem from './NavItem';
+import HomeIcon from '@material-ui/icons/Home';
+import AnnouncementIcon from '@material-ui/icons/Announcement';
+import { AnnouncementTwoTone } from '@material-ui/icons';
 
 const user = {
-  avatar: '/static/images/avatars/avatar_6.png',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith'
+  avatar: '',
+  jobTitle: '',
+  name: ''
 };
 
 const items = [
   {
     href: '/app/dashboard',
-    icon: BarChartIcon,
+    icon: HomeIcon,
     title: 'Home'
   },
   {
-    href: '/app/customers',
+    href: '/app/products',
     icon: UsersIcon,
-    title: ''
+    title: 'Add Income/Expenses'
   },
   {
-    href: '/app/products',
-    icon: ShoppingBagIcon,
+    href: '/app/customers',
+    icon: AnnouncementIcon,
     title: 'News'
   },
   {
@@ -132,40 +134,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             />
           ))}
         </List>
-      </Box>
-      <Box flexGrow={1} />
-      <Box
-        p={2}
-        m={2}
-        bgcolor="background.dark"
-      >
-        <Typography
-          align="center"
-          gutterBottom
-          variant="h4"
-        >
-          Need more?
-        </Typography>
-        <Typography
-          align="center"
-          variant="body2"
-        >
-          Upgrade to PRO version and access 20 more screens
-        </Typography>
-        <Box
-          display="flex"
-          justifyContent="center"
-          mt={2}
-        >
-          <Button
-            color="primary"
-            component="a"
-            href="https://react-material-kit.devias.io"
-            variant="contained"
-          >
-            See PRO version
-          </Button>
-        </Box>
       </Box>
     </Box>
   );

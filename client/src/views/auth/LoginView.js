@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Formik } from 'formik';
@@ -13,6 +13,8 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
+import { signin } from '../../actions/index'
+import { useDispatch } from 'react-redux'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +28,23 @@ const useStyles = makeStyles((theme) => ({
 const LoginView = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(signin({
+      email: email,
+      password: password
+    }, ()=>{
+      console.log('pushing to another page');
+      navigate('/app/dashboard', { replace: true });
+    }))
+
+  }
 
   return (
     <Page
@@ -44,19 +63,19 @@ const LoginView = () => {
               email: '',
               password: ''
             }}
-            validationSchema={Yup.object().shape({
-              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-              password: Yup.string().max(255).required('Password is required')
-            })}
-            onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+            // validationSchema={Yup.object().shape({
+            //   email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+            //   password: Yup.string().max(255).required('Password is required')
+            // })}
+            onSubmit={(values) => {
+              console.log(values);
             }}
           >
             {({
               errors,
               handleBlur,
               handleChange,
-              handleSubmit,
+              // handleSubmit,
               isSubmitting,
               touched,
               values
@@ -133,9 +152,9 @@ const LoginView = () => {
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
-                  onChange={handleChange}
+                  onChange={(e)=>setEmail(e.target.value)}
                   type="email"
-                  value={values.email}
+                  value={email}
                   variant="outlined"
                 />
                 <TextField
@@ -146,9 +165,9 @@ const LoginView = () => {
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
-                  onChange={handleChange}
+                  onChange={(e)=>setPassword(e.target.value)}
                   type="password"
-                  value={values.password}
+                  value={password}
                   variant="outlined"
                 />
                 <Box my={2}>

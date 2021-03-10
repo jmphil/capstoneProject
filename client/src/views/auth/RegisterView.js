@@ -34,6 +34,8 @@ const RegisterView = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
   const handleSubmit = (e) => {
     
@@ -44,6 +46,8 @@ const RegisterView = () => {
     //dispatch(sinup(), cb)
 
     dispatch(signUp({
+      firstName: firstName,
+      lastName: lastName,
       email: email,
       password: password
     }, ()=>{
@@ -76,15 +80,15 @@ const RegisterView = () => {
               password: '',
               policy: false
             }}
-            validationSchema={
-              Yup.object().shape({
-                email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-                firstName: Yup.string().max(255).required('First name is required'),
-                lastName: Yup.string().max(255).required('Last name is required'),
-                password: Yup.string().max(255).required('password is required'),
-                policy: Yup.boolean().oneOf([true], 'This field must be checked')
-              })
-            }
+            // validationSchema={
+            //   Yup.object().shape({
+            //     email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+            //     firstName: Yup.string().max(255).required('First name is required'),
+            //     lastName: Yup.string().max(255).required('Last name is required'),
+            //     password: Yup.string().max(255).required('password is required'),
+            //     policy: Yup.boolean().oneOf([true], 'This field must be checked')
+            //   })
+            // }
             onSubmit={(values) => {
               // dispatch(signUp(email, password), () =>{
                 // console.log()
@@ -126,8 +130,8 @@ const RegisterView = () => {
                   margin="normal"
                   name="firstName"
                   onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.firstName}
+                  onChange={(e)=>setFirstName(e.target.value)}
+                  value={firstName}
                   variant="outlined"
                 />
                 <TextField
@@ -138,8 +142,8 @@ const RegisterView = () => {
                   margin="normal"
                   name="lastName"
                   onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.lastName}
+                  onChange={(e)=>setLastName(e.target.value)}
+                  value={lastName}
                   variant="outlined"
                 />
                 <TextField

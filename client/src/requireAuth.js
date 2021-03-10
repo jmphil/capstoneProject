@@ -22,6 +22,7 @@ export default (ChildComponent)=> {
                 //redirect our user back to home page
                 this.props.history.push('/'); //redirecting via react-router
             }
+            console.log('authenticated')
         }
 
         render(){

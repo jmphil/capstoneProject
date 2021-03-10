@@ -45,7 +45,9 @@ router.post("/signin", requireSignin, (req, res) => {
  */
 router.post("/signup", async (req, res) => {
   //body-parse to scrape info
-  //email, password
+  //email, password, firstName, lastName
+  let firstName = req.body.firstName 
+  let lastName = req.body.lastName
   let email = req.body.email;
   //encrypt: bcrypt
   let password = bcrypt.hashSync(req.body.password, 8);
@@ -57,7 +59,7 @@ router.post("/signup", async (req, res) => {
     if (records.length === 0) {
       //add a new record
 
-      let user = await db.user.create({email: email, password: password});
+      let user = await db.user.create({firstName: firstName, lastName: lastName, email: email, password: password});
 
       let jwtToken = token(user); //token returns a jwt
 
