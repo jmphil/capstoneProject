@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
   },
   statsIcon: {
     marginRight: theme.spacing(1)
-  }
+  },
+  large: {
+    width: 100,
+    height: 100,
+  },
 }));
 
 const ProductCard = ({ className, product, ...rest }) => {
@@ -43,6 +47,7 @@ const ProductCard = ({ className, product, ...rest }) => {
           mb={3}
         >
           <Avatar
+            className={classes.large}
             alt="Product"
             src={product.thumbnail}
             variant="square"
@@ -76,10 +81,7 @@ const ProductCard = ({ className, product, ...rest }) => {
             className={classes.statsItem}
             item
           >
-            <AccessTimeIcon
-              className={classes.statsIcon}
-              color="action"
-            />
+           
             <Typography
               color="textSecondary"
               display="inline"
@@ -92,16 +94,17 @@ const ProductCard = ({ className, product, ...rest }) => {
             className={classes.statsItem}
             item
           >
-            <GetAppIcon
+            {/* <GetAppIcon
               className={classes.statsIcon}
               color="action"
-            />
+            /> */}
             <Typography
               color="textSecondary"
               display="inline"
               variant="body2"
+              type= "url"
             >
-              {product.url}
+              <a href={product.url}>Read The Full Article</a>
               
             </Typography>
           </Grid>
