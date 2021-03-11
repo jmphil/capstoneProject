@@ -2,15 +2,15 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import DashboardLayout from 'src/layouts/DashboardLayout';
 import MainLayout from 'src/layouts/MainLayout';
-import AccountView from 'src/views/account/AccountView';
-import CustomerListView from 'src/views/customer/CustomerListView';
-import DashboardView from 'src/views/reports/DashboardView';
-import LoginView from 'src/views/auth/LoginView';
-import Logout from 'src/views/auth/Logout';
-import NotFoundView from 'src/views/errors/NotFoundView';
-import ProductListView from 'src/views/product/ProductListView';
-import RegisterView from 'src/views/auth/RegisterView';
-import SettingsView from 'src/views/settings/SettingsView';
+import AccountView from 'src/components/account/AccountView';
+import AddAssetsView from 'src/components/addAssets/AddAssetsView';
+import DashboardView from 'src/components/reports/DashboardView';
+import LoginView from 'src/components/auth/LoginView';
+import Logout from 'src/components/auth/Logout';
+import NotFoundView from 'src/components/errors/NotFoundView';
+import FinancialNewsView from 'src/components/financialNews/FinancialNewsView';
+import RegisterView from 'src/components/auth/RegisterView';
+import SettingsView from 'src/components/settings/SettingsView';
 import requireAuth from './requireAuth';
 
 const routes = [
@@ -19,10 +19,10 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'account', element: <AccountView /> },
-      { path: 'customers', element: <CustomerListView /> },
+      { path: 'add-assets', element: <AddAssetsView /> },
       { path: 'dashboard', element: <DashboardView /> },
-      { path: 'products', element: <ProductListView /> },
-      { path: 'settings', element: <SettingsView /> },
+      { path: 'news', element: <FinancialNewsView /> },
+      // { path: 'settings', element: <SettingsView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },

@@ -4,8 +4,8 @@ import {
   Grid,
   makeStyles
 } from '@material-ui/core';
-import Page from 'src/components/Page';
-import Budget from './Earnings';
+import Page from 'src/styles/Page';
+// import Budget from './Earnings';
 import LatestOrders from './LatestOrders';
 import LatestProducts from './LatestProducts';
 import Sales from './Sales';
@@ -31,7 +31,7 @@ const Dashboard = () => {
       className={classes.root}
       title="Dashboard"
     >
-      <Container maxWidth={false}>
+      {/* <Container maxWidth={false}>
         <Grid
           container
           spacing={3}
@@ -97,7 +97,7 @@ const Dashboard = () => {
             xl={3}
             xs={12}
           >
-            {/* <LatestProducts />
+            <LatestProducts />
           </Grid>
           <Grid
             item
@@ -106,10 +106,10 @@ const Dashboard = () => {
             xl={9}
             xs={12}
           >
-            <LatestOrders /> */}
+            <LatestOrders />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </Page>
   );
 };

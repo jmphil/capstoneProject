@@ -13,7 +13,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import InputIcon from '@material-ui/icons/Input';
-import Logo from 'src/components/Logo';
+import Logo from 'src/styles/Logo';
 
 const useStyles = makeStyles(() => ({
   root: {},

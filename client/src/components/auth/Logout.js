@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import Page from 'src/components/Page';
+import Page from 'src/styles/Page';
 import { signout } from '../../actions/index'
 import { useNavigate } from 'react-router-dom'
 import {useDispatch} from 'react-redux';
