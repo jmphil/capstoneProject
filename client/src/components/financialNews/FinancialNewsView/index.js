@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Container,
@@ -9,7 +9,7 @@ import { Pagination } from '@material-ui/lab';
 import Page from 'src/styles/Page';
 import Toolbar from './Toolbar';
 import ProductCard from './ProductCard';
-import data from './data';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,21 +25,42 @@ const useStyles = makeStyles((theme) => ({
 
 const FinancialNews = () => {
   const classes = useStyles();
-  const [products] = useState(data);
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    const data = () => {
 
+      const options = {
+          method: 'GET',
+          url: 'https://yahoo-finance-low-latency.p.rapidapi.com/v2/finance/news',
+          params: {symbols: 'AAPL,MSFT'},
+          headers: {
+            'x-rapidapi-key': '8e6928ba41mshbee0bc1cce66dc5p1882b6jsnf35f410a4537',
+            'x-rapidapi-host': 'yahoo-finance-low-latency.p.rapidapi.com'
+          }
+        };
+        
+        axios.request(options).then(function (response) {
+            setArticles(response.data.Content.result);
+        }).catch(function (error) {
+            console.error(error);
+        });
+      }
+      data()
+  }, [])
+  console.log(articles);
   return (
     <Page
       className={classes.root}
       title="News"
     >
-      {/* <Container maxWidth={false}>
+      <Container maxWidth={false}>
         <Toolbar />
         <Box mt={3}>
           <Grid
             container
             spacing={3}
           >
-            {products.map((product) => (
+            {articles.map((product) => (
               <Grid
                 item
                 key={product.id}
@@ -66,7 +87,7 @@ const FinancialNews = () => {
             size="small"
           />
         </Box>
-      </Container> */}
+      </Container>
     </Page>
   );
 };

@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
 import reducerTemplate from "./reducers";
-//import { formReducer } from "redux-form";
+
+import assetReducer from "./assetReducer"
 
 export default combineReducers({
   auth: reducerTemplate,
-  //form: formReducer,
+  assets: assetReducer
 });

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -14,6 +15,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import InputIcon from '@material-ui/icons/Input';
 import Logo from 'src/styles/Logo';
+import { signout } from '../../actions/index'
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -23,12 +25,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-// const history = useHistory();
 
-// const routeChange = () => {
-//   const path = 'newPath';
-//   history.push(path);
-// };
 
 const TopBar = ({
   className,
@@ -36,6 +33,16 @@ const TopBar = ({
   ...rest
 }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    
+    dispatch(signout(()=>{
+      console.log('pushing to another page');
+      navigate('/', { replace: true });
+    }));
+}
   
 
   return (
@@ -54,7 +61,7 @@ const TopBar = ({
           {/* logout button needs action to fire */}
           <RouterLink to="/login">
             <IconButton>
-              <InputIcon />
+              <InputIcon onClick={logOut}/>
             </IconButton>
           </RouterLink>
         </Hidden>

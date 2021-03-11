@@ -34,7 +34,7 @@ const routes = [
       { path: 'register', element: <RegisterView /> },
       { path: 'logout', element: <Logout /> },
       { path: '404', element: <NotFoundView /> },
-      { path: '/', element: <Navigate to="/app/dashboard" /> },
+      { path: '/', element: <Navigate to="/login" /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }
