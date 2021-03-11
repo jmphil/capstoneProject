@@ -43,9 +43,9 @@ export const signin = (formData, cb) => {
         try{
             let response = await axios.post('http://localhost:3001/signin', formData);
 
-            dispatch({type: "AUTH_USER", data: response.data.token});
+            dispatch({type: "AUTH_USER", data: response.data});
 
-            console.log('signin', response.data.token);
+            console.log('signin', response.data);
             localStorage.setItem('token', response.data.token);
 
             cb();

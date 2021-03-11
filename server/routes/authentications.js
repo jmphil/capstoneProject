@@ -36,8 +36,9 @@ router.post("/signin", requireSignin, (req, res) => {
   //validate user
 
   //send token
-  
-  res.json({token: token(req.user)})
+  console.log(req.user);
+  res.json({token: token(req.user),id: req.user.id, firstName: req.user.firstName, lastName: req.user.lastName})
+
 });
 
 /**

@@ -44,7 +44,7 @@ const ProductCard = ({ className, product, ...rest }) => {
         >
           <Avatar
             alt="Product"
-            src={product.media}
+            src={product.thumbnail}
             variant="square"
           />
         </Box>
@@ -85,7 +85,7 @@ const ProductCard = ({ className, product, ...rest }) => {
               display="inline"
               variant="body2"
             >
-              Updated 2hr ago
+              
             </Typography>
           </Grid>
           <Grid
@@ -101,9 +101,8 @@ const ProductCard = ({ className, product, ...rest }) => {
               display="inline"
               variant="body2"
             >
-              {product.totalDownloads}
-              {' '}
-              Downloads
+              {product.url}
+              
             </Typography>
           </Grid>
         </Grid>
