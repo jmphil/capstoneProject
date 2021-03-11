@@ -7,6 +7,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import reduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from '../src/reducers/index';
+import requireAuth from './requireAuth';
 
 
 let store = createStore(reducer, {},  

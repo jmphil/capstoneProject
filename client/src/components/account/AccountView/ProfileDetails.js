@@ -35,12 +35,12 @@ const useStyles = makeStyles(() => ({
 const ProfileDetails = ({ className, ...rest }) => {
   const classes = useStyles();
   const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
-    phone: '555-5555',
-    state: 'Alabama',
-    country: 'USA'
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    state: '',
+    country: ''
   });
 
   const handleChange = (event) => {
@@ -60,7 +60,7 @@ const ProfileDetails = ({ className, ...rest }) => {
       <Card>
         <CardHeader
           subheader="The information can be edited"
-          title="Profile"
+          title="*Profile Coming Soon*"
         />
         <Divider />
         <CardContent>

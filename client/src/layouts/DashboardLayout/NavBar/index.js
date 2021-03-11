@@ -23,6 +23,7 @@ import NavItem from './NavItem';
 import HomeIcon from '@material-ui/icons/Home';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
 import { AnnouncementTwoTone } from '@material-ui/icons';
+import AddIcon from '@material-ui/icons/Add';
 
 const user = {
   avatar: '',
@@ -37,20 +38,20 @@ const items = [
     title: 'Home'
   },
   {
-    href: '/app/products',
-    icon: UsersIcon,
-    title: 'Add Income/Expenses'
+    href: '/app/add-assets',
+    icon: AddIcon,
+    title: 'Add Assets'
   },
   {
-    href: '/app/customers',
+    href: '/app/news',
     icon: AnnouncementIcon,
-    title: 'News'
+    title: 'Financial News'
   },
-  {
-    href: '/app/account',
-    icon: UserIcon,
-    title: 'Account'
-  },
+  // {
+  //   href: '/app/account',
+  //   icon: UserIcon,
+  //   title: 'Account'
+  // },
   {
     href: '/login',
     icon: LockIcon,
@@ -102,11 +103,12 @@ const NavBar = ({ onMobileClose, openMobile }) => {
         flexDirection="column"
         p={2}
       >
+        {/* will add avatar link in future feature */}
         <Avatar
           className={classes.avatar}
-          component={RouterLink}
+          // component={RouterLink}
           src={user.avatar}
-          to="/app/account"
+          // to="/app/dashboard"
         />
         <Typography
           className={classes.name}

@@ -6,7 +6,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
-import Page from 'src/components/Page';
+import Page from 'src/styles/Page';
 import Toolbar from './Toolbar';
 import ProductCard from './ProductCard';
 import data from './data';
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProductList = () => {
+const FinancialNews = () => {
   const classes = useStyles();
   const [products] = useState(data);
 
@@ -32,7 +32,7 @@ const ProductList = () => {
       className={classes.root}
       title="News"
     >
-      <Container maxWidth={false}>
+      {/* <Container maxWidth={false}>
         <Toolbar />
         <Box mt={3}>
           <Grid
@@ -66,9 +66,9 @@ const ProductList = () => {
             size="small"
           />
         </Box>
-      </Container>
+      </Container> */}
     </Page>
   );
 };
 
-export default ProductList;
+export default FinancialNews;
