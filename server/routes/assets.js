@@ -42,5 +42,23 @@ router.post("/assets", async (req, res) => {
     // res.json({token: token(req.user),id: req.user.id, firstName: req.user.firstName, lastName: req.user.lastName})
 
 });
+//get data from db for user
+router.get("/assets/:id", async (req, res) => {
+  let userId = req.params.id;
+  console.log(userId);
+  try{
+    let records = await db.data.findAll({ where: { userId: userId } });
+    console.log(records);
+    if (records.length === 0){
+      return res.status(422).send({error: 'No record found'});
+    }
+    else {
+      return res.json(records[0])
+    }
+  }
+  catch(error){
+    return res.status(423).send({error: `Can't access database`});
+  }
+});
 
 module.exports = router

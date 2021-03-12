@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import TopBar from './TopBar';
-import requireAuth from '../../requireAuth';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,9 +39,7 @@ const MainLayout = () => {
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
-            <requireAuth>
               <Outlet />
-            </requireAuth>
           </div>
         </div>
       </div>

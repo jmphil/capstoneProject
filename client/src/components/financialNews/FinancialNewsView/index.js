@@ -11,6 +11,7 @@ import Toolbar from './Toolbar';
 import ProductCard from './ProductCard';
 import axios from 'axios';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
@@ -34,7 +35,7 @@ const FinancialNews = () => {
           url: 'https://yahoo-finance-low-latency.p.rapidapi.com/v2/finance/news',
           params: {symbols: 'AAPL,MSFT'},
           headers: {
-            'x-rapidapi-key': '8e6928ba41mshbee0bc1cce66dc5p1882b6jsnf35f410a4537',
+            'x-rapidapi-key': process.env.REACT_APP_API_KEY,
             'x-rapidapi-host': 'yahoo-finance-low-latency.p.rapidapi.com'
           }
         };
@@ -81,11 +82,11 @@ const FinancialNews = () => {
           display="flex"
           justifyContent="center"
         >
-          <Pagination
+          {/* <Pagination
             color="primary"
             count={3}
             size="small"
-          />
+          /> */}
         </Box>
       </Container>
     </Page>

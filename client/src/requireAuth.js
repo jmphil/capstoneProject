@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { Navigate } from 'react-router-dom';
+
 
 //requireAuth(HOC)
 
@@ -18,9 +20,10 @@ export default (ChildComponent)=> {
 
         //is our user authenticated?
         isAuthenticated = ()=>{
+            console.log(this.props)
             if(!this.props.auth){
                 //redirect our user back to home page
-                this.props.history.push('/'); //redirecting via react-router
+                <Navigate to="/login" />; //redirecting via react-router
             }
             console.log('authenticated')
         }
