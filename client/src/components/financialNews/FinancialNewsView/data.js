@@ -9,7 +9,7 @@
 //     url: 'https://yahoo-finance-low-latency.p.rapidapi.com/v2/finance/news',
 //     params: {symbols: 'AAPL,MSFT'},
 //     headers: {
-//       'x-rapidapi-key': '8e6928ba41mshbee0bc1cce66dc5p1882b6jsnf35f410a4537',
+//       'x-rapidapi-key': '',
 //       'x-rapidapi-host': 'yahoo-finance-low-latency.p.rapidapi.com'
 //     }
 //   };
