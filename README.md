@@ -1,3 +1,4 @@
-# Capstone Project
+<h1 align="center"> Marbles </h1>
 
-## Testing Branch
+<h3 align="center">Marbles is a simple tool that allows you to view and track your assets.
+</h3> 
