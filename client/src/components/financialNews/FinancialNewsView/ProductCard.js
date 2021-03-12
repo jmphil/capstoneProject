@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1)
   },
   large: {
-    width: 100,
+    width: 128,
     height: 100,
   },
 }));
@@ -104,7 +104,7 @@ const ProductCard = ({ className, product, ...rest }) => {
               variant="body2"
               type= "url"
             >
-              <a href={product.url}>Read The Full Article</a>
+              <a href={product.url} target="_blank">Read The Full Article</a>
               
             </Typography>
           </Grid>

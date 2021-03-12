@@ -39,9 +39,7 @@ const LoginView = () => {
     dispatch(signin({
       email: email,
       password: password
-    }, ()=>{
-      console.log('pushing to another page');
-      navigate('/app/dashboard', { replace: true });
+    
     }))
 
   }

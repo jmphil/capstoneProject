@@ -10,25 +10,25 @@ import Logout from 'src/components/auth/Logout';
 import NotFoundView from 'src/components/errors/NotFoundView';
 import FinancialNewsView from 'src/components/financialNews/FinancialNewsView';
 import RegisterView from 'src/components/auth/RegisterView';
-import SettingsView from 'src/components/settings/SettingsView';
-import requireAuth from './requireAuth';
+// import SettingsView from 'src/components/settings/SettingsView';
 
-const routes = [
+
+const routes = (isLoggedIn) => [
   {
-    path: 'app',
-    element: <DashboardLayout />,
+    path: '/app',
+    element: isLoggedIn ? <DashboardLayout /> : <Navigate to="/login" />,
     children: [
-      { path: 'account', element: <AccountView /> },
-      { path: 'add-assets', element: <AddAssetsView /> },
-      { path: 'dashboard', element: <DashboardView /> },
-      { path: 'news', element: <FinancialNewsView /> },
+      { path: '/account', element: <AccountView /> },
+      { path: '/add-assets', element: <AddAssetsView /> },
+      { path: '/dashboard', element: <DashboardView /> },
+      { path: '/news', element: <FinancialNewsView /> },
       // { path: 'settings', element: <SettingsView /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
   {
     path: '/',
-    element: <MainLayout />,
+    element: !isLoggedIn ? <MainLayout /> : <Navigate to="/app/dashboard" />,
     children: [
       { path: 'login', element: <LoginView /> },
       { path: 'register', element: <RegisterView /> },

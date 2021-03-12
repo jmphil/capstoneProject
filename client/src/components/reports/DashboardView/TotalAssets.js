@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
@@ -27,11 +28,11 @@ const useStyles = makeStyles(() => ({
 const TotalAssets = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
-
+  const {investments, checking, savings} = useSelector((state) => state.assets);
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
+        data: [investments, checking, savings],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
@@ -70,19 +71,19 @@ const TotalAssets = ({ className, ...rest }) => {
   const money = [
     {
       title: 'Invetments',
-      value: 63,
+      value: investments,
       icon: ShowChartIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Checking',
-      value: 15,
+      value: checking,
       icon: AccountBalanceIcon,
       color: colors.red[600]
     },
     {
       title: 'Savings',
-      value: 23,
+      value: savings,
       icon: AttachMoney,
       color: colors.orange[600]
     }

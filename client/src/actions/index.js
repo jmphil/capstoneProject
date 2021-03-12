@@ -1,4 +1,4 @@
-import actionTypes from './actionTypes';
+// import actionTypes from './actionTypes';
 import axios from 'axios';
 
 export const signUp = (formData, cb) => {
@@ -14,7 +14,7 @@ export const signUp = (formData, cb) => {
     return async dispatch=>{
         
         try{
-            let response = await axios.post('http://localhost:3001/signup', formData) //formdata will put on header
+            let response = await axios.post(`${process.env.REACT_APP_SERVER}/signup`, formData) //formdata will put on header
 
             console.log(response.data.token);//token
 
@@ -41,14 +41,14 @@ export const signin = (formData, cb) => {
     return async dispatch =>{
 
         try{
-            let response = await axios.post('http://localhost:3001/signin', formData);
+            let response = await axios.post(`${process.env.REACT_APP_SERVER}/signin`, formData);
 
             dispatch({type: "AUTH_USER", data: response.data});
 
             console.log('signin', response.data);
             localStorage.setItem('token', response.data.token);
 
-            cb();
+            // cb();
         }
         catch(e){
 
