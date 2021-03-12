@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
   AppBar,
-  Badge,
+  // Badge,
   Box,
   Hidden,
   IconButton,
@@ -60,7 +60,7 @@ const TopBar = ({
          
           {/* logout button needs action to fire */}
           <RouterLink to="/login">
-            <IconButton>
+            <IconButton>Logout
               <InputIcon onClick={logOut}/>
             </IconButton>
           </RouterLink>

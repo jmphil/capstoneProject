@@ -5,7 +5,7 @@ import {
   Grid,
   makeStyles
 } from '@material-ui/core';
-import { Pagination } from '@material-ui/lab';
+// import { Pagination } from '@material-ui/lab';
 import Page from 'src/styles/Page';
 import Toolbar from './Toolbar';
 import ProductCard from './ProductCard';
@@ -33,7 +33,7 @@ const FinancialNews = () => {
       const options = {
           method: 'GET',
           url: 'https://yahoo-finance-low-latency.p.rapidapi.com/v2/finance/news',
-          params: {symbols: 'AAPL,MSFT'},
+          params: {symbols: 'AAPL,MSFT,TSLA,AMD,AMZN,LULU,NFLX'},
           headers: {
             'x-rapidapi-key': process.env.REACT_APP_API_KEY,
             'x-rapidapi-host': 'yahoo-finance-low-latency.p.rapidapi.com'

@@ -11,9 +11,10 @@ import {
   colors,
   makeStyles
 } from '@material-ui/core';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+// import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
 import MoneyIcon from '@material-ui/icons/Money';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Budget = ({ className, ...rest }) => {
   const classes = useStyles();
+  const {checking} = useSelector((state) => state.assets);
 
   return (
     <Card
@@ -53,13 +55,13 @@ const Budget = ({ className, ...rest }) => {
               gutterBottom
               variant="h6"
             >
-              Earnings
+              Checking Accounts
             </Typography>
             <Typography
               color="textPrimary"
               variant="h3"
             >
-              $3400
+              ${checking}
             </Typography>
           </Grid>
           <Grid item>

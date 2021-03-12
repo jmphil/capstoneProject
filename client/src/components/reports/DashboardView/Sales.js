@@ -101,16 +101,16 @@ const Sales = ({ className, ...rest }) => {
       {...rest}
     >
       <CardHeader
-        action={(
-          <Button
-            endIcon={<ArrowDropDownIcon />}
-            size="small"
-            variant="text"
-          >
-            Last 7 days
-          </Button>
-        )}
-        title="Latest Sales"
+        // action={(
+        //   <Button
+        //     endIcon={<ArrowDropDownIcon />}
+        //     size="small"
+        //     variant="text"
+        //   >
+        //     Last 7 days
+        //   </Button>
+        // )}
+        title="Recent Deposits"
       />
       <Divider />
       <CardContent>
@@ -119,8 +119,8 @@ const Sales = ({ className, ...rest }) => {
           position="relative"
         >
           <Bar
-            data={data}
-            options={options}
+            // data={data}
+            // options={options}
           />
         </Box>
       </CardContent>
@@ -130,14 +130,14 @@ const Sales = ({ className, ...rest }) => {
         justifyContent="flex-end"
         p={2}
       >
-        <Button
+        {/* <Button
           color="primary"
           endIcon={<ArrowRightIcon />}
           size="small"
           variant="text"
         >
           Overview
-        </Button>
+        </Button> */}
       </Box>
     </Card>
   );

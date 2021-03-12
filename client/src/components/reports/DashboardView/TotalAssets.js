@@ -133,8 +133,8 @@ const TotalAssets = ({ className, ...rest }) => {
                 style={{ color }}
                 variant="h2"
               >
-                {value}
-                %
+                ${value}
+                
               </Typography>
             </Box>
           ))}

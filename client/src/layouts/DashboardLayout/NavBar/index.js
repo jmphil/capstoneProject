@@ -1,29 +1,36 @@
 import React, { useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {  Link as RouterLink, useNavigate ,useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
-  Button,
+  // Button,
   Divider,
   Drawer,
   Hidden,
   List,
   Typography,
-  makeStyles
+  makeStyles,
+  // IconButton
 } from '@material-ui/core';
 import {
   Lock as LockIcon,
-  ShoppingBag as ShoppingBagIcon,
-  User as UserIcon,
+  // ShoppingBag as ShoppingBagIcon,
+  // User as UserIcon,
   UserPlus as UserPlusIcon,
-  Users as UsersIcon,
+  // Users as UsersIcon,
 } from 'react-feather';
 import NavItem from './NavItem';
 import HomeIcon from '@material-ui/icons/Home';
+// import InputIcon from '@material-ui/icons/Input';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
-import { AnnouncementTwoTone } from '@material-ui/icons';
+// import { AnnouncementTwoTone } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
+import { useSelector } from 'react-redux';
+import { signout } from '../../../actions/index';
+
+
 
 const user = {
   avatar: '',
@@ -62,6 +69,12 @@ const items = [
     icon: UserPlusIcon,
     title: 'Register'
   },
+  // {
+  //   href: '/',
+  //   icon: InputIcon,
+  //   title: 'Logout',
+    
+  // },
 ];
 
 const useStyles = makeStyles(() => ({
@@ -83,6 +96,17 @@ const useStyles = makeStyles(() => ({
 const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
+  const fName = useSelector(state => state.auth.firstName);
+  const lName = useSelector(state => state.auth.lastName);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const logOut = () => {
+    
+    dispatch(signout(()=>{
+      console.log('pushing to another page');
+      navigate('/', { replace: true });
+    }));
+}
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -90,6 +114,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
+
 
   const content = (
     <Box
@@ -114,8 +139,10 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           className={classes.name}
           color="textPrimary"
           variant="h5"
+          placeholder="Username"
+          
         >
-          {user.name}
+          Welcome, {fName} {lName}
         </Typography>
         <Typography
           color="textSecondary"
@@ -135,6 +162,12 @@ const NavBar = ({ onMobileClose, openMobile }) => {
               icon={item.icon}
             />
           ))}
+          {/* <RouterLink to="/login">
+            <IconButton>
+              <InputIcon onClick={logOut}/>
+              Logout
+            </IconButton>
+          </RouterLink> */}
         </List>
       </Box>
     </Box>

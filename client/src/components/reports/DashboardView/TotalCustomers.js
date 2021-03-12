@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -13,6 +14,7 @@ import {
 } from '@material-ui/core';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const TotalCustomers = ({ className, ...rest }) => {
   const classes = useStyles();
+  const {savings} = useSelector((state) => state.assets);
 
   return (
     <Card
@@ -58,7 +61,7 @@ const TotalCustomers = ({ className, ...rest }) => {
               color="textPrimary"
               variant="h3"
             >
-              12,000
+              ${savings}
             </Typography>
           </Grid>
           <Grid item>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -8,7 +9,9 @@ import {
   Grid,
   Typography,
   makeStyles,
-  colors
+  colors,
+  Box,
+  LinearProgress,
 } from '@material-ui/core';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
@@ -25,7 +28,9 @@ const useStyles = makeStyles(() => ({
 
 const TotalProfit = ({ className, ...rest }) => {
   const classes = useStyles();
-
+  const {savings, investments, checking} = useSelector((state) => state.assets);
+  const total = savings + investments + checking
+  console.log(total)
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -49,7 +54,7 @@ const TotalProfit = ({ className, ...rest }) => {
               color="textPrimary"
               variant="h3"
             >
-              35,400
+              ${total}
             </Typography>
           </Grid>
           <Grid item>
@@ -58,6 +63,12 @@ const TotalProfit = ({ className, ...rest }) => {
             </Avatar>
           </Grid>
         </Grid>
+        <Box mt={3}>
+          <LinearProgress
+            value={75.5}
+            variant="determinate"
+          />
+        </Box>
       </CardContent>
     </Card>
   );
