@@ -6,8 +6,8 @@ import {
 } from '@material-ui/core';
 import Page from 'src/styles/Page';
 import Budget from './Earnings';
-import LatestOrders from './LatestOrders';
-import LatestProducts from './LatestProducts';
+// import LatestOrders from './LatestOrders';
+// import LatestProducts from './LatestProducts';
 import Sales from './Sales';
 import TasksProgress from './TasksProgress';
 import TotalCustomers from './TotalCustomers';

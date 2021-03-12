@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import { Formik } from 'formik';
 import {
   Box,
   Button,
   Container,
-  Grid,
+  // Grid,
   Link,
   TextField,
   Typography,
@@ -22,6 +22,12 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3)
+  },
+  image: {
+    marginBottom: 100,
+    display: 'inline-block',
+    maxWidth: '100%',
+    width: 560
   }
 }));
 
@@ -72,27 +78,34 @@ const LoginView = () => {
             {({
               errors,
               handleBlur,
-              handleChange,
+              // handleChange,
               // handleSubmit,
               isSubmitting,
               touched,
               values
             }) => (
               <form onSubmit={handleSubmit}>
+                 <Box textAlign="center">
+                    <h1
+                      className={classes.image}
+                    >
+                    Welcome To Marbles
+                    </h1>
+                  </Box>
                 <Box mb={3}>
-                  {/* <Typography
+                  <Typography
                     color="textPrimary"
                     variant="h2"
                   >
                     Sign in
-                  </Typography> */}
-                  <Typography
+                  </Typography>
+                  {/* <Typography
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
                   >
                     Sign in on the internal platform
-                  </Typography>
+                  </Typography> */}
                 </Box>
                 {/* <Grid
                   container

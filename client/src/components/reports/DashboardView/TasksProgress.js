@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -28,6 +29,7 @@ const useStyles = makeStyles(() => ({
 
 const TasksProgress = ({ className, ...rest }) => {
   const classes = useStyles();
+  const {investments} = useSelector((state) => state.assets);
 
   return (
     <Card
@@ -52,7 +54,7 @@ const TasksProgress = ({ className, ...rest }) => {
               color="textPrimary"
               variant="h3"
             >
-              20,000
+              ${investments}
             </Typography>
           </Grid>
           <Grid item>
@@ -61,12 +63,12 @@ const TasksProgress = ({ className, ...rest }) => {
             </Avatar>
           </Grid>
         </Grid>
-        <Box mt={3}>
+        {/* <Box mt={3}>
           <LinearProgress
             value={75.5}
             variant="determinate"
           />
-        </Box>
+        </Box> */}
       </CardContent>
     </Card>
   );
