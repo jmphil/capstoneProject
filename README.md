@@ -23,7 +23,7 @@ Other Tools:
 <ul>
     <li>React</li>
     <li>Redux</li>
-    <li>React-Bootstrap</li>
+    <li>Material-UI</li>
     <li>JSON Web Tokens (authentication)</li>
     <li>PostgreSQL(database)</li>
 </ul>
