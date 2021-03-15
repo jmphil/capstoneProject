@@ -13,6 +13,10 @@ app.use(require('./routes/assets'));
 app.listen(3001, ()=>{
     console.log(`listening on port 3001`);
 })
+// const port = process.env.PORT || 5000;
+// app.listen(port, () => {
+//     console.log(`Server started on port ${port}`);
+// });
 
 
 // const jwt = require('jwt-simple'); // create a jwt token
