@@ -39,7 +39,7 @@ const TopBar = ({
   const logOut = () => {
     
     dispatch(signout(()=>{
-      console.log('pushing to another page');
+      // console.log('pushing to another page');
       navigate('/', { replace: true });
     }));
 }
@@ -59,11 +59,11 @@ const TopBar = ({
         <Hidden mdDown>
          
           {/* logout button needs action to fire */}
-          <RouterLink to="/login">
-            <IconButton>Logout
-              <InputIcon onClick={logOut}/>
+          
+            <IconButton onClick={logOut}>Logout
+              <InputIcon />
             </IconButton>
-          </RouterLink>
+          
         </Hidden>
         <Hidden lgUp>
           <IconButton

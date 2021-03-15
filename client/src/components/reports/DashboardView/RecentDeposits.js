@@ -1,4 +1,5 @@
 import React from 'react';
+// import {useSelector} from 'react-redux'
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
@@ -14,7 +15,8 @@ import {
   colors
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+// import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -23,21 +25,23 @@ const useStyles = makeStyles(() => ({
 const Sales = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
-
+  // const { savings, checking, investments} = useSelector((state) => state.assets); can also add updated at to create time stamps
+  // console.log(updatedAt);
+  //make array of past 5 days with totals sci for using chartsjs
   const data = {
     datasets: [
       {
         backgroundColor: colors.indigo[500],
         data: [18, 5, 19, 27, 29, 19, 20],
-        label: 'This year'
+        label: 'This week'
       },
-      {
-        backgroundColor: colors.grey[200],
-        data: [11, 20, 12, 29, 30, 25, 13],
-        label: 'Last year'
-      }
+      // {
+      //   backgroundColor: colors.grey[200],
+      //   data: [11, 20, 12, 29, 30, 25, 13],
+      //   label: 'Last year'
+      // }
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
+    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug']
   };
 
   const options = {
@@ -101,15 +105,17 @@ const Sales = ({ className, ...rest }) => {
       {...rest}
     >
       <CardHeader
-        // action={(
-        //   <Button
-        //     endIcon={<ArrowDropDownIcon />}
-        //     size="small"
-        //     variant="text"
-        //   >
-        //     Last 7 days
-        //   </Button>
-        // )}
+        action={(
+          <Button
+            endIcon={<ArrowDropDownIcon />}
+            size="small"
+            variant="text"
+            onClick=""//future feature
+            
+          >
+            Last 5 days
+          </Button>
+        )}
         title="Recent Deposits"
       />
       <Divider />
@@ -119,8 +125,8 @@ const Sales = ({ className, ...rest }) => {
           position="relative"
         >
           <Bar
-            // data={data}
-            // options={options}
+            data={data}
+            options={options}
           />
         </Box>
       </CardContent>
