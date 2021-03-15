@@ -52,17 +52,19 @@ Other Tools:
 <h2><u>Challenges & Solutions:</u><h2>
 <h3>Some of the biggest challenges I faced with this project build included:</h2>
 
-<b>Challenge: </b>
+<b>Challenge: Working Solo </b>
 <br/> <br/>
-<b>Solution: </b>
+<b>Solution: I wanted to build this project on my own to push myself to better understand the technologies covered at DigitalCrafts. </b>
 
 <b>Challenge: Working with a React template</b>
 <br/> <br/>
 <b>Solution:  Working with a template for the first time was a big challenge. I spent many hours renaming and reworking the file structure and layout unitl it met my needs. 
 </b>
 
-<b>Challenge: </b>
+<b>Challenge: Keeping track of all documentation</b>
 <br/> <br/>
-<b>Solution:  </b>
+<b>Solution: I decided to create a spread sheet to track all the links I needed to reference. </b>
 
 </br>
+
+<h2><u>Code Snippets:</u></h2>
