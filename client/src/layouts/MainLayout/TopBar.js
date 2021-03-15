@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link as RouterLink, useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+// import { useNavigate} from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -9,7 +9,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Logo from 'src/styles/Logo';
-import { signout } from '../../actions/index';
+// import { signout } from '../../actions/index';
 
 
 
@@ -22,16 +22,16 @@ const useStyles = makeStyles(({
 
 const TopBar = ({ className, ...rest }) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
-  const logOut = () => {
+//   const logOut = () => {
     
-    dispatch(signout(()=>{
-      console.log('pushing to another page');
-      navigate('/', { replace: true });
-    }));
-}
+//     dispatch(signout(()=>{
+//       console.log('pushing to another page');
+//       navigate('/', { replace: true });
+//     }));
+// }
 
   return (
     <AppBar

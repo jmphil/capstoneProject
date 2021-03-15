@@ -4,16 +4,16 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
   Avatar,
-  Box,
+  // Box,
   Card,
   CardContent,
   Grid,
-  LinearProgress,
+  // LinearProgress,
   Typography,
   makeStyles,
   colors
 } from '@material-ui/core';
-import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
+// import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 const useStyles = makeStyles(() => ({

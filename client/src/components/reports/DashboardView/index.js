@@ -8,7 +8,7 @@ import Page from 'src/styles/Page';
 import Budget from './Earnings';
 // import LatestOrders from './LatestOrders';
 // import LatestProducts from './LatestProducts';
-import Sales from './Sales';
+import Sales from './RecentDeposits';
 import TasksProgress from './TasksProgress';
 import TotalCustomers from './TotalCustomers';
 import TotalProfit from './TotalProfit';

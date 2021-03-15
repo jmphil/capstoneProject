@@ -1,7 +1,8 @@
 const initialState = {
     checking: '',
     savings: '',
-    investments: ''
+    investments: '',
+    updatedAt: '',
 
 }
 
@@ -14,7 +15,8 @@ const assetReducer = (state = initialState, action) => {
                 ...state, 
                 checking: action.data.checking,
                 savings: action.data.savings,
-                investments: action.data.investments
+                investments: action.data.investments,
+                updatedAt: action.data.updatedAt
             }
         default:
             return state;

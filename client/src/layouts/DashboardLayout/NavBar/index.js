@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import {  Link as RouterLink, useNavigate ,useLocation } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Avatar,
@@ -28,7 +28,7 @@ import AnnouncementIcon from '@material-ui/icons/Announcement';
 // import { AnnouncementTwoTone } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
 import { useSelector } from 'react-redux';
-import { signout } from '../../../actions/index';
+// import { signout } from '../../../actions/index';
 
 
 
@@ -98,15 +98,15 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const location = useLocation();
   const fName = useSelector(state => state.auth.firstName);
   const lName = useSelector(state => state.auth.lastName);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const logOut = () => {
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+//   const logOut = () => {
     
-    dispatch(signout(()=>{
-      console.log('pushing to another page');
-      navigate('/', { replace: true });
-    }));
-}
+//     dispatch(signout(()=>{
+//       console.log('pushing to another page');
+//       navigate('/', { replace: true });
+//     }));
+// }
 
   useEffect(() => {
     if (openMobile && onMobileClose) {

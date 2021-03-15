@@ -33,7 +33,7 @@ const FinancialNews = () => {
       const options = {
           method: 'GET',
           url: 'https://yahoo-finance-low-latency.p.rapidapi.com/v2/finance/news',
-          params: {symbols: 'AAPL,MSFT,TSLA,AMD,AMZN,LULU,NFLX'},
+          params: {symbols: 'AAPL,MSFT,TSLA,AMD,AMZN,LULU,NFLX,GME'},
           headers: {
             'x-rapidapi-key': process.env.REACT_APP_API_KEY,
             'x-rapidapi-host': 'yahoo-finance-low-latency.p.rapidapi.com'

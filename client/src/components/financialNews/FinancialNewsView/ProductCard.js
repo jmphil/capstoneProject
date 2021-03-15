@@ -11,8 +11,8 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+// import AccessTimeIcon from '@material-ui/icons/AccessTime';
+// import GetAppIcon from '@material-ui/icons/GetApp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -104,7 +104,7 @@ const ProductCard = ({ className, product, ...rest }) => {
               variant="body2"
               type= "url"
             >
-              <a href={product.url} target="_blank">Read The Full Article</a>
+              <a href={product.url} target="_blank" rel="noreferrer" >Read The Full Article</a>
               
             </Typography>
           </Grid>
