@@ -52,13 +52,13 @@ Other Tools:
 <h2><u>Challenges & Solutions:</u><h2>
 <h3>Some of the biggest challenges I faced with this project build included:</h2>
 
-<b>Challenge: React Lifecycle Methods</b>
+<b>Challenge: </b>
 <br/> <br/>
 <b>Solution: </b>
 
-<b>Challenge: Working with a React theme</b>
+<b>Challenge: Working with a React template</b>
 <br/> <br/>
-<b>Solution:  Working with a template for the first time was a big challenge. After 
+<b>Solution:  Working with a template for the first time was a big challenge. I spent many hours renaming and reworking the file structure and layout unitl it met my needs. 
 </b>
 
 <b>Challenge: </b>
