@@ -68,3 +68,41 @@ Other Tools:
 </br>
 
 <h2><u>Code Snippets:</u></h2>
+
+<h4>Using Redux to add assets from database</h4>
+
+```
+const AddAssetsView = () => {
+  const classes = useStyles();
+  // const [customers] = useState(data);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [checking, setChecking] = useState('');
+  const [savings, setSavings] = useState('');
+  const [investments, setInvestments] = useState('');
+  const userId = useSelector((state) => state.auth.id);
+
+  
+
+  const handleSubmit = (e) => {
+    
+    e.preventDefault();
+
+    // call action
+    //pass the email address and password to our action
+    //dispatch(sinup(), cb)
+
+    dispatch(setAssets({
+      userId: userId,
+      checking: checking,
+      savings: savings,
+      investments: investments
+    }, () =>{
+      console.log('pushing to another page');
+      navigate('/app/dashboard', { replace: true });
+    }))
+
+
+
+  }
+```
