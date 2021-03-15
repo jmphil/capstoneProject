@@ -75,18 +75,18 @@ const TotalCustomers = ({ className, ...rest }) => {
           display="flex"
           alignItems="center"
         >
-          <ArrowUpwardIcon className={classes.differenceIcon} />
+          {/* <ArrowUpwardIcon className={classes.differenceIcon} /> */}
           <Typography
             className={classes.differenceValue}
             variant="body2"
           >
-            16%
+            
           </Typography>
           <Typography
             color="textSecondary"
             variant="caption"
           >
-            Since last month
+            
           </Typography>
         </Box>
       </CardContent>
