@@ -1,0 +1,11 @@
+
+
+{
+  "development": {
+    "username": "ctjrbszt",
+    "password": "DZLgJoX_Zq76vhKpO_m01Vpndz6UUylU",
+    "database": "ctjrbszt",
+    "host": "ziggy.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}
