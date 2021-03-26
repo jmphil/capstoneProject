@@ -1,17 +1,27 @@
 
 const express = require('express');
 const app = express();
+const { Pool } = require('pg');
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
+
 app.use(require('./routes/authentications'));
 app.use(require('./routes/assets'));
 
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
-
+app.listen(3001, ()=>{
+    console.log(`listening on port 3001`);
+})
 
 // let port = 8000;
 
