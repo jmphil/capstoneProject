@@ -10,9 +10,15 @@ app.use(function(req, res, next) {
 app.use(require('./routes/authentications'));
 app.use(require('./routes/assets'));
 
-app.listen(3001, ()=>{
-    console.log(`listening on port 3001`);
-})
+// app.listen(3001, ()=>{
+//     console.log(`listening on port 3001`);
+// })
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 
 // const jwt = require('jwt-simple'); // create a jwt token
