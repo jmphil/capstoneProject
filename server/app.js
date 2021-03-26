@@ -14,7 +14,8 @@ app.use(require('./routes/assets'));
 //     console.log(`listening on port 3001`);
 // })
 
-let port = process.env.PORT;
+let port = 8000;
+
 if (port == null || port == "") {
   port = 8000;
 }
