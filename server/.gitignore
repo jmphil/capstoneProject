@@ -1,5 +1,5 @@
-# config
+config
 node_modules
-# secrets.js
-# init.bash
-# ./seeders
+secrets.js
+init.bash
+./seeders
