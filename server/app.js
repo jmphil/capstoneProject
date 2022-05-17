@@ -22,6 +22,10 @@ const pool = new Pool({
 app.listen(3001, ()=>{
     console.log(`listening on port 3001`);
 })
+// const port = process.env.PORT || 5000;
+// app.listen(port, () => {
+//     console.log(`Server started on port ${port}`);
+// });
 
 // let port = 8000;
 
